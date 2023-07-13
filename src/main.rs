@@ -1,8 +1,7 @@
-use std::env;
-use std::path::Path;
 use std::fs::File;
 use std::process::Command;
 use serde::Deserialize;
+extern crate dirs;
 
 #[derive(Debug, Deserialize)]
 #[serde()]
@@ -13,14 +12,11 @@ struct GitConfig {
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let home_dir = dirs::home_dir().expect("Failed to retrieve the home directory");
 
-    if args.len() < 2 {
-        println!("Usage: git-switch <config_file>");
-        return;
-    }
-    let config_file_path = Path::new(&args[1]);
-    let config_file = File::open(config_file_path).expect("file not found");
+    let config_file_path = home_dir.join(".git-switch.json");
+
+    let config_file = File::open(config_file_path).expect("Config not found, Create a .git-switch.json file in your home directory.");
 
     let configs: Vec<GitConfig> = serde_json
         ::from_reader(config_file)

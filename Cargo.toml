@@ -1,6 +1,6 @@
 [package]
 name = "git-switch"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Ashik Meerankutty <ashik9591@gmail.com>"]
 license = "MIT"
 description = "A tool to switch between git user configs"
@@ -14,3 +14,4 @@ edition = "2018"
 [dependencies]
 serde = { version = "1.0.104", features = ["derive"] }
 serde_json = "1.0.48"
+dirs = "5.0"
