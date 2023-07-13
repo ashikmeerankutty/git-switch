@@ -50,7 +50,7 @@ fn main() {
         let current_user_email: std::borrow::Cow<'_, str> =
             String::from_utf8_lossy(&current_user_email_output.stdout);
 
-        if current_user_name != config.username || current_user_email != config.email {
+        if current_user_name.trim() != config.username || current_user_email.trim() != config.email {
             if origin_url.contains(&config.host) {
                 let username_output = Command::new("git")
                     .arg("config")
