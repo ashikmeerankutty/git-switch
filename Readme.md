@@ -1,4 +1,3 @@
-```markdown
 # Git Switch
 
 Switch between Git user configs
