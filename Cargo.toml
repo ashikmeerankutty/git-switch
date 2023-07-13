@@ -2,6 +2,13 @@
 name = "git-switch"
 version = "0.1.0"
 authors = ["Ashik Meerankutty <ashik9591@gmail.com>"]
+license = "MIT"
+description = "A tool to switch between git user configs"
+readme = "README.md"
+homepage = "https://github.com/ashikmeerankutty/git-switch"
+repository = "https://github.com/ashikmeerankutty/git-switch"
+keywords = ["cli", "git", "config"]
+categories = ["command-line-utilities"]
 edition = "2018"
 
 [dependencies]
