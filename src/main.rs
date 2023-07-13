@@ -27,8 +27,6 @@ fn main() {
         .expect("Failed to read the config file");
 
     for config in configs {
-        println!("Hello {} aka {}", config.username, config.email);
-
         let output = Command::new("git")
             .arg("remote")
             .arg("get-url")
