@@ -54,18 +54,17 @@ fn main() {
             if origin_url.contains(&config.host) {
                 let username_output = Command::new("git")
                     .arg("config")
-                    .arg("--global")
                     .arg("user.name")
                     .arg(&config.username)
                     .output()
-                    .expect("Failed to execute 'git config --global user.name'");
+                    .expect("Failed to execute 'git config user.name'");
                 let email_output = Command::new("git")
                     .arg("config")
                     .arg("--global")
                     .arg("user.email")
                     .arg(&config.email)
                     .output()
-                    .expect("Failed to execute 'git config --global user.email'");
+                    .expect("Failed to execute 'git config user.email'");
 
                 if username_output.status.success() && email_output.status.success() {
                     println!("Successfully switched Git configuration to: {:?}", config);
